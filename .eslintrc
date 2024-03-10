@@ -1,5 +1,8 @@
 {
-  "extends": ["@nuxt", "plugin:prettier/recommended", "prettier"],
+  "plugins": [
+    "css"
+  ],
+  "extends": ["@nuxt", "plugin:css/standard", "plugin:prettier/recommended", "prettier"],
   "env": {
     "browser": true,
     "node": true

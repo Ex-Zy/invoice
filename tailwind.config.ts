@@ -27,6 +27,7 @@ export default {
       'orange-light': '#FF9797',
       light: '#F8F8FB',
       metal: '#141625',
+      slate: '#373B53',
     },
     fontFamily: {
       sans: ['League Spartan', 'sans-serif'],

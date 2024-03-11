@@ -11,6 +11,8 @@ export default defineNuxtConfig({
         },
       },
     ],
+    // https://ui.nuxt.com/
+    '@nuxt/ui',
   ],
   css: ['~/assets/main.scss'],
   postcss: {

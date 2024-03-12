@@ -2,8 +2,7 @@
 
 <template>
   <div>
-    <div>Invoices page</div>
-    <UButton color="sky" variant="outline">Text button</UButton>
+    <InvoicesPageHeader />
   </div>
 </template>
 

@@ -11,7 +11,7 @@ function switchDarkTheme() {
 
 <template>
   <div
-    class="flex h-[72px] justify-end bg-slate md:h-[80px] lg:min-h-screen lg:flex-col lg:rounded-tr-[26px]">
+    class="flex h-[72px] justify-end bg-slate md:h-[80px] lg:min-h-screen lg:flex-col lg:rounded-tr-[26px] dark:bg-dark">
     <!-- Logo -->
     <NuxtLink class="mr-auto lg:mb-auto lg:mr-0" to="/">
       <picture>
@@ -27,7 +27,7 @@ function switchDarkTheme() {
     <!-- Switch dark/light theme -->
     <UButton
       variant="ghost"
-      class="flex justify-center rounded-none bg-transparent px-6 align-middle text-stone transition-colors duration-200 hover:bg-transparent hover:text-silver lg:p-6 dark:text-stone dark:hover:bg-transparent dark:hover:text-silver"
+      class="hover:text-primary-silver dark:hover:text-primary-silver flex justify-center rounded-none bg-transparent px-6 align-middle text-xl text-stone transition-colors duration-200 hover:bg-transparent md:p-8 dark:text-stone dark:hover:bg-transparent"
       @click="switchDarkTheme">
       <UIcon :name="iconSwitchName" />
     </UButton>

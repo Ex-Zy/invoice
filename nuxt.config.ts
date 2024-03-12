@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    // https://google-fonts.nuxtjs.org/
     [
       '@nuxtjs/google-fonts',
       {
@@ -11,8 +10,8 @@ export default defineNuxtConfig({
         },
       },
     ],
-    // https://ui.nuxt.com/
     '@nuxt/ui',
+    '@vueuse/nuxt',
   ],
   css: ['~/assets/main.scss'],
   postcss: {

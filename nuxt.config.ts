@@ -12,7 +12,11 @@ export default defineNuxtConfig({
     ],
     '@nuxt/ui',
     '@vueuse/nuxt',
+    'nuxt-delay-hydration',
   ],
+  delayHydration: {
+    mode: 'mount',
+  },
   css: ['~/assets/main.scss'],
   postcss: {
     plugins: {

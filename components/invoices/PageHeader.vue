@@ -9,7 +9,7 @@
         Invoices
       </h1>
       <div
-        class="text-primary-gray dark:text-primary-silver mt-0.5 font-sans text-[13px] font-medium leading-4 tracking-tight">
+        class="text-primary-gray dark:text-primary-silver text-body mt-0.5 font-sans font-medium leading-4 tracking-tight">
         <span class="md:hidden lg:hidden">7 invoices</span>
         <span class="hidden md:inline">There are 7 total invoices</span>
       </div>
@@ -20,12 +20,7 @@
       <InvoicesFilterByStatus />
 
       <!-- Create New Invoice button -->
-      <UButton
-        class="dark:bg-primary-purple dark:hover:bg-primary-purple-light bg-primary-purple hover:bg-primary-purple-light h-[44px] gap-2.5 rounded-full pl-[6px] pr-[15px] text-[15px] leading-none tracking-normal transition-all duration-300 dark:text-white">
-        <UIcon name="i-heroicons-plus-circle-20-solid" class="text-[32px]" />
-        <span class="md:hidden lg:hidden">New</span>
-        <span class="hidden md:inline">New Invoice</span>
-      </UButton>
+      <CreateNewInvoiceButton />
     </div>
   </div>
 </template>

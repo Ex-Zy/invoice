@@ -24,10 +24,10 @@ const checkboxes = reactive<Checkbox[]>([
   <UPopover v-model:open="isOpen">
     <UButton
       variant="ghost"
-      class="gap-3 px-4 py-3 dark:hover:bg-transparent"
+      class="gap-3 px-4 py-3 hover:bg-transparent dark:hover:bg-transparent"
       color="white"
       :trailing-icon="arrowIcon">
-      <span class="text-[15px] font-bold leading-none tracking-normal">
+      <span class="text-small font-bold leading-none tracking-normal">
         <span class="md:hidden lg:hidden">Filter</span>
         <span class="hidden md:inline">Filter by status</span>
       </span>
@@ -42,7 +42,7 @@ const checkboxes = reactive<Checkbox[]>([
           :ui="{
             wrapper: 'items-center',
             label:
-              'text-[15px] tracking-normal font-bold text-dark leading-none',
+              'text-small tracking-normal font-bold text-dark leading-none',
           }"
           input-class="dark:text-primary-purple text-primary-purple bg-primary-silver hover:border-primary-purple transition-colors duration-300"
           :value="checkbox.value"

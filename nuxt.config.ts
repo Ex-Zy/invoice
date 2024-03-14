@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-delay-hydration',
+    '@pinia/nuxt',
   ],
   delayHydration: {
     mode: 'mount',

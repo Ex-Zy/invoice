@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import invoices from '@/data.json'
+const { invoices } = storeToRefs(useInvoices())
+const { getInvoices } = useInvoices()
+
+getInvoices()
 </script>
 
 <template>
@@ -7,7 +10,7 @@ import invoices from '@/data.json'
     <InvoicesItem
       v-for="invoice in invoices"
       :key="invoice.id"
-      :invoice="invoice as Invoice" />
+      :invoice="invoice" />
   </div>
 </template>
 

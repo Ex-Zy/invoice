@@ -1,22 +1,10 @@
 <script setup lang="ts">
 const props = defineProps<{ invoice: Invoice }>()
 
-const dateFormat = new Intl.DateTimeFormat('en-GB', {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-})
+const { $toPounds, $toDate } = useNuxtApp()
 
-const paymentDue = computed(() => {
-  return `Due ${dateFormat.format(new Date(props.invoice.paymentDue))}`
-})
-
-const pounds = Intl.NumberFormat('en-GB', {
-  style: 'currency',
-  currency: 'GBP',
-})
-
-const totalInPounds = computed(() => pounds.format(props.invoice.total))
+const paymentDue = computed(() => `Due ${$toDate(props.invoice.paymentDue)}`)
+const totalInPounds = computed(() => $toPounds(props.invoice.total))
 </script>
 
 <template>

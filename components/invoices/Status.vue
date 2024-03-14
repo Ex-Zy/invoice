@@ -1,22 +1,37 @@
 <script setup lang="ts">
+enum Status {
+  Paid = 'paid',
+  Pending = 'pending',
+  Draft = 'draft',
+}
+
+const COLORS = {
+  paid: '#33d69f',
+  pending: '#ff8f00',
+  draft: '#373b53',
+}
+
 const props = defineProps<{ status: Status }>()
 
-const wrapperClasses = computed(() => ({
-  'bg-[#33d69f0d]': props.status === 'paid',
-  'bg-[#ff8f000d]': props.status === 'pending',
-  'bg-[#373b530d]': props.status === 'draft',
-}))
-const textClasses = computed(() => ({
-  'text-[#33d69f]': props.status === 'paid',
-  'text-[#ff8f00]': props.status === 'pending',
-  'text-[#373b53]': props.status === 'draft',
-}))
+const wrapperClasses = computed(() => addColorClasses('bg', true))
+const textClasses = computed(() => addColorClasses('text'))
+const circleClasses = computed(() => addColorClasses('bg'))
 
-const circleClasses = computed(() => ({
-  'bg-[#33d69f]': props.status === 'paid',
-  'bg-[#ff8f00]': props.status === 'pending',
-  'bg-[#373b53]': props.status === 'draft',
-}))
+function addColorClasses(twClass: string, addAlpha = false) {
+  const colors = { ...COLORS }
+
+  if (addAlpha) {
+    for (const key in colors) {
+      colors[key as Status] += `0d`
+    }
+  }
+
+  return {
+    [`${twClass}-[${colors.paid}]`]: props.status === Status.Paid,
+    [`${twClass}-[${colors.pending}]`]: props.status === Status.Pending,
+    [`${twClass}-[${colors.draft}]`]: props.status === Status.Draft,
+  }
+}
 </script>
 
 <template>

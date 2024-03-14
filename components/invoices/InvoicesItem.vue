@@ -21,7 +21,7 @@ const totalInPounds = computed(() => pounds.format(props.invoice.total))
 
 <template>
   <div
-    class="relative flex h-[134px] justify-between rounded-lg bg-white p-6 md:h-[72px] md:px-6 md:py-4 dark:bg-dark">
+    class="hover:outline-primary-purple relative flex h-[134px] cursor-pointer justify-between rounded-lg bg-white p-6 outline outline-1 outline-transparent md:h-[72px] md:px-6 md:py-4 dark:bg-dark">
     <!-- column 1 -->
     <div
       class="flex flex-col justify-end md:grow md:flex-row md:items-center md:justify-start">

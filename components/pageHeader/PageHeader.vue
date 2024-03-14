@@ -5,7 +5,7 @@
     <!-- Invoice title/amount -->
     <div>
       <h1
-        class="font-sans text-2xl font-bold leading-none tracking-tighter text-onyx lg:text-4xl dark:text-white">
+        class="font-sans text-2xl font-bold leading-none tracking-tighter text-onyx md:text-4xl dark:text-white">
         Invoices
       </h1>
       <div
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="flex items-center gap-[18px] md:gap-[40px]">
+    <div class="flex items-center md:gap-[40px]">
       <!-- Filter by invoice status -->
       <FilterByStatus />
 

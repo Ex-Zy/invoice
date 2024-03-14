@@ -46,14 +46,14 @@ const totalInPounds = computed(() => pounds.format(props.invoice.total))
 
       <!-- total -->
       <div
-        class="text-small mt-2.5 text-right font-sans font-bold leading-none tracking-normal md:mt-0 md:grow md:px-10 dark:text-white">
+        class="text-small mt-2.5 font-sans font-bold leading-none tracking-normal md:mt-0 md:grow md:px-10 md:text-right dark:text-white">
         {{ totalInPounds }}
       </div>
     </div>
     <!-- column 2 -->
     <div
       class="flex flex-col justify-end md:w-[144px] md:flex-row md:items-center md:gap-4">
-      <InvoicesStatus :status="invoice.status" />
+      <Status :status="invoice.status" />
       <UIcon
         class="text-primary-purple hidden h-6 w-6 md:block lg:block"
         name="i-heroicons-chevron-right-20-solid" />

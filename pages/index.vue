@@ -2,9 +2,9 @@
 
 <template>
   <div>
-    <InvoicesPageHeader />
+    <PageHeader />
     <div class="mt-8">
-      <InvoicesListView />
+      <InvoicesList />
     </div>
   </div>
 </template>

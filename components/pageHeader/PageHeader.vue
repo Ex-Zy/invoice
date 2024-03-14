@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="container flex justify-between">
+  <div class="flex justify-between">
     <!-- Invoice title/amount -->
     <div>
       <h1
@@ -17,7 +17,7 @@
 
     <div class="flex items-center gap-[18px] md:gap-[40px]">
       <!-- Filter by invoice status -->
-      <InvoicesFilterByStatus />
+      <FilterByStatus />
 
       <!-- Create New Invoice button -->
       <CreateNewInvoiceButton />

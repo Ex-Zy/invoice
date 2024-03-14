@@ -4,7 +4,10 @@ import invoices from '@/data.json'
 
 <template>
   <div class="flex flex-col gap-4">
-    <InvoicesItem v-for="invoice in invoices" :key="invoice.id" :invoice />
+    <InvoicesItem
+      v-for="invoice in invoices"
+      :key="invoice.id"
+      :invoice="invoice as Invoice" />
   </div>
 </template>
 

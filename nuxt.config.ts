@@ -30,4 +30,7 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  typescript: {
+    typeCheck: true,
+  },
 })

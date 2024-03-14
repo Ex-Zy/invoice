@@ -1,10 +1,4 @@
 <script setup lang="ts">
-enum Status {
-  Paid = 'paid',
-  Pending = 'pending',
-  Draft = 'draft',
-}
-
 const COLORS = {
   paid: '#33d69f',
   pending: '#ff8f00',
@@ -27,9 +21,9 @@ function addColorClasses(twClass: string, addAlpha = false) {
   }
 
   return {
-    [`${twClass}-[${colors.paid}]`]: props.status === Status.Paid,
-    [`${twClass}-[${colors.pending}]`]: props.status === Status.Pending,
-    [`${twClass}-[${colors.draft}]`]: props.status === Status.Draft,
+    [`${twClass}-[${colors.paid}]`]: props.status === 'paid',
+    [`${twClass}-[${colors.pending}]`]: props.status === 'pending',
+    [`${twClass}-[${colors.draft}]`]: props.status === 'draft',
   }
 }
 </script>

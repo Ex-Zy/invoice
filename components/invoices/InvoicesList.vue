@@ -2,9 +2,6 @@
 import { vAutoAnimate } from '@formkit/auto-animate'
 
 const { invoices } = storeToRefs(useInvoices())
-const { getInvoices } = useInvoices()
-
-getInvoices()
 </script>
 
 <template>

@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { invoices } = storeToRefs(useInvoices())
+const total = computed(() => invoices.value.length)
+</script>
 
 <template>
   <div class="flex justify-between">
@@ -9,9 +12,14 @@
         Invoices
       </h1>
       <div
-        class="text-primary-gray dark:text-primary-silver text-body mt-0.5 font-sans font-medium leading-4 tracking-tight">
-        <span class="md:hidden lg:hidden">7 invoices</span>
-        <span class="hidden md:inline">There are 7 total invoices</span>
+        class="mt-0.5 font-sans text-body font-medium leading-4 tracking-tight text-primary-gray dark:text-primary-silver">
+        <template v-if="total">
+          <span class="md:hidden lg:hidden">{{ total }} invoices</span>
+          <span class="hidden md:inline">
+            There are {{ total }} total invoices
+          </span>
+        </template>
+        <span v-else>No invoices</span>
       </div>
     </div>
 

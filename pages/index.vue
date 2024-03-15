@@ -1,10 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { invoices } = storeToRefs(useInvoices())
+const { getInvoices } = useInvoices()
+
+getInvoices()
+</script>
 
 <template>
-  <div>
+  <div class="flex grow flex-col gap-y-[54px]">
     <PageHeader />
-    <div class="md:mt- mt-[54px]">
-      <InvoicesList />
+    <div class="flex grow flex-col">
+      <InvoicesList v-if="invoices.length" />
+      <NoInvoicesToDisplay v-else class="m-auto -mt-[-54px]" />
     </div>
   </div>
 </template>

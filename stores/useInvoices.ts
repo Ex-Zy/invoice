@@ -10,9 +10,16 @@ export const useInvoices = defineStore('invoices', () => {
     })
   }
 
+  function getInvoiceById(id: string): Invoice | null {
+    const invoice = (data as Invoice[]).find((item) => item.id === id)
+
+    return invoice ?? null
+  }
+
   return {
     invoices,
     filterByStatus,
     getInvoices,
+    getInvoiceById,
   }
 })

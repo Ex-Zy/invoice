@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@vueuse/motion/nuxt',
+    'nuxt-typed-router',
   ],
   css: ['~/assets/main.scss'],
   postcss: {

@@ -1,36 +1,31 @@
 <script setup lang="ts">
-const COLORS = {
-  paid: '#33d69f',
-  pending: '#ff8f00',
-  draft: '#373b53',
-}
-
 const props = defineProps<{ status: Status }>()
 
-const wrapperClasses = computed(() => addColorClasses('bg', true))
-const textClasses = computed(() => addColorClasses('text'))
-const circleClasses = computed(() => addColorClasses('bg'))
+const isPaid = computed(() => props.status === 'paid')
+const isPending = computed(() => props.status === 'pending')
+const isDraft = computed(() => props.status === 'draft')
 
-function addColorClasses(twClass: string, addAlpha = false) {
-  const colors = { ...COLORS }
+const wrapperClasses = computed(() => ({
+  'bg-[#33d69f0d]': isPaid.value,
+  'bg-[#ff8f000d]': isPending.value,
+  'bg-[#373b530d] dark:bg-[#dfe3fa0d]': isDraft.value,
+}))
+const textClasses = computed(() => ({
+  'text-[#33d69f]': isPaid.value,
+  'text-[#ff8f00]': isPending.value,
+  'text-[#373b53] dark:text-[#dfe3fa]': isDraft.value,
+}))
 
-  if (addAlpha) {
-    for (const key in colors) {
-      colors[key as Status] += `0d`
-    }
-  }
-
-  return {
-    [`${twClass}-[${colors.paid}]`]: props.status === 'paid',
-    [`${twClass}-[${colors.pending}]`]: props.status === 'pending',
-    [`${twClass}-[${colors.draft}]`]: props.status === 'draft',
-  }
-}
+const circleClasses = computed(() => ({
+  'bg-[#33d69f]': isPaid.value,
+  'bg-[#ff8f00]': isPending.value,
+  'bg-[#373b53] dark:bg-[#dfe3fa0d]': isDraft.value,
+}))
 </script>
 
 <template>
   <div
-    class="text-small flex h-[40px] w-[104px] items-center justify-center gap-2 rounded-md font-sans font-bold capitalize leading-none tracking-normal"
+    class="flex h-[40px] w-[104px] items-center justify-center gap-2 rounded-md font-sans text-small font-bold capitalize leading-none tracking-normal"
     :class="wrapperClasses">
     <span class="h-2 w-2 rounded-full" :class="circleClasses"></span>
     <span :class="textClasses">

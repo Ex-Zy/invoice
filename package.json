@@ -12,6 +12,7 @@
     "typecheck": "npx nuxi typecheck"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@nuxt/ui": "^2.14.2",
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/nuxt": "^10.9.0",

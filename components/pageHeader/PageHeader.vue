@@ -4,9 +4,9 @@ const total = computed(() => invoices.value.length)
 </script>
 
 <template>
-  <div class="flex justify-between">
+  <div class="z-10 flex justify-between">
     <!-- Invoice title/amount -->
-    <div>
+    <div v-motion-slide-top>
       <h1
         class="font-sans text-2xl font-bold leading-none tracking-tighter text-onyx md:text-4xl dark:text-white">
         Invoices
@@ -23,7 +23,7 @@ const total = computed(() => invoices.value.length)
       </div>
     </div>
 
-    <div class="flex items-center md:gap-[40px]">
+    <div v-motion-slide-bottom class="flex items-center md:gap-[40px]">
       <!-- Filter by invoice status -->
       <FilterByStatus />
 

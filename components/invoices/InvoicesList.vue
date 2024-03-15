@@ -6,10 +6,10 @@ const { invoices } = storeToRefs(useInvoices())
 
 <template>
   <div v-auto-animate="{ duration: 300 }" class="flex flex-col gap-4">
-    <InvoicesItem
-      v-for="invoice in invoices"
-      :key="invoice.id"
-      :invoice="invoice" />
+    <template v-for="(invoice, index) in invoices" :key="invoice.id">
+      <InvoicesItem v-if="index % 2" v-motion-slide-left :invoice="invoice" />
+      <InvoicesItem v-else v-motion-slide-right :invoice="invoice" />
+    </template>
   </div>
 </template>
 

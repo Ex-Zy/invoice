@@ -2,15 +2,15 @@
 
 <template>
   <div
-    class="bg-primary-draft flex h-[72px] justify-end md:h-[80px] lg:min-h-screen lg:flex-col lg:rounded-tr-[26px] dark:bg-dark">
+    class="flex h-[72px] justify-end overflow-hidden bg-primary-draft md:h-[80px] lg:min-h-screen lg:flex-col lg:rounded-tr-[26px] dark:bg-dark">
     <!-- Logo -->
-    <AppLogo />
+    <AppLogo v-motion-slide-top />
     <!-- Switch dark/light theme -->
-    <SwitchThemeButton />
+    <SwitchThemeButton v-motion-slide-bottom />
 
     <!-- Divider -->
     <div class="h-auto w-[1px] bg-[#494E6E] lg:h-[1px] lg:w-auto" />
     <!-- Profile -->
-    <ProfileButton />
+    <ProfileButton v-motion-slide-top />
   </div>
 </template>

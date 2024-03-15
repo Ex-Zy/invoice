@@ -4,7 +4,9 @@ interface Checkbox {
   value: string
 }
 
-const selectedStatus = ref([])
+const { filterByStatus } = storeToRefs(useInvoices())
+const { getInvoices } = useInvoices()
+
 const isOpen = ref(false)
 
 const arrowIcon = computed(() =>
@@ -38,7 +40,7 @@ const checkboxes = reactive<Checkbox[]>([
         <UCheckbox
           v-for="checkbox in checkboxes"
           :key="checkbox.value"
-          v-model="selectedStatus"
+          v-model="filterByStatus"
           :ui="{
             wrapper: 'items-center',
             label:
@@ -46,7 +48,8 @@ const checkboxes = reactive<Checkbox[]>([
           }"
           input-class="dark:text-primary-purple text-primary-purple bg-primary-silver hover:border-primary-purple transition-colors duration-300"
           :value="checkbox.value"
-          :label="checkbox.label" />
+          :label="checkbox.label"
+          @change="getInvoices" />
       </div>
     </template>
   </UPopover>

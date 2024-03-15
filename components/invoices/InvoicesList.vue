@@ -8,7 +8,7 @@ getInvoices()
 </script>
 
 <template>
-  <div v-auto-animate class="flex flex-col gap-4">
+  <div v-auto-animate="{ duration: 300 }" class="flex flex-col gap-4">
     <InvoicesItem
       v-for="invoice in invoices"
       :key="invoice.id"

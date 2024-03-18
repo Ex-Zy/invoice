@@ -44,6 +44,13 @@ export default <Partial<Config>>{
         tight: '-0.1px',
         normal: '-0.25px',
       },
+      lineHeight: {
+        body: '18px',
+        small: '15px',
+        'small-variant': '24px',
+        medium: '22px',
+        large: '33px',
+      },
     },
   },
   plugins: [],

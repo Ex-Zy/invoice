@@ -15,17 +15,12 @@ const totalInPounds = computed(() => $toPounds(props.invoice.total))
       <div
         class="flex flex-col justify-end md:grow md:flex-row md:items-center md:justify-start">
         <!-- id -->
-        <span
-          class="mb-auto font-sans text-small font-bold md:mb-0 md:w-[80px] dark:text-white">
-          <em class="-mr-1 not-italic text-primary-stone">#</em>
-          {{ props.invoice.id }}
-        </span>
+        <InvoiceID :id="props.invoice.id" class="mb-auto md:mb-0 md:w-[80px]" />
 
         <!-- payment due-->
-        <span
-          class="font-sans text-body font-medium tracking-tight text-primary-stone md:w-[130px] md:px-4 lg:w-[150px]">
-          {{ paymentDue }}
-        </span>
+        <BodyText
+          class="md:w-[130px] md:px-4 lg:w-[150px]"
+          :text="paymentDue" />
 
         <!-- Client name -->
         <span

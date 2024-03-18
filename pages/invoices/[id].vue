@@ -6,8 +6,9 @@ const invoice = getInvoiceById(route.params.id)
 
 <template>
   <div v-if="invoice" class="flex flex-col gap-4">
+    <GoBackButton v-motion-slide-top class="w-[100px]" />
     <StatusBar v-motion-slide-bottom :status="invoice.status" />
-    <InvoiceDescription v-motion-slide-top :invoice="invoice" />
+    <InvoiceDetails v-motion-slide-top :invoice="invoice" />
   </div>
 </template>
 

@@ -4,7 +4,7 @@ const props = defineProps<{ status: Status }>()
 
 <template>
   <div
-    class="flex h-[90px] items-center justify-between rounded-lg bg-white p-10">
+    class="flex h-[90px] items-center justify-between rounded-lg bg-white p-10 dark:bg-dark">
     <span class="text-body font-medium tracking-tight text-primary-stone">
       Status
     </span>
